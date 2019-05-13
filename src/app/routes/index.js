@@ -1,11 +1,11 @@
 const combineRouters = require('koa-combine-routers');
 
-const transactions = require('./transactions');
-const accounts = require('./accounts');
+const wallets = require('./wallets');
+const orders = require('./orders');
 
 const router = combineRouters(
-    transactions,
-    accounts,
+    wallets,
+    orders,
 );
 
 module.exports = router;

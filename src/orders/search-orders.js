@@ -1,8 +1,8 @@
 const _ = require('lodash');
 
-const Transaction = require('../model/transaction');
+const Order = require('../model/order');
 
-const searchTransactions = ({ address, limit, page, query }) => {
+const searchOrders = ({ address, limit, page, query }) => {
   let filter = {};
 
   if (_.isString(query)) {
@@ -19,11 +19,11 @@ const searchTransactions = ({ address, limit, page, query }) => {
     };
   }
 
-  return Transaction.paginate(filter, {
+  return Order.paginate(filter, {
     sort: { date: -1 },
     limit,
     page,
   });
 };
 
-module.exports = searchTransactions;
+module.exports = searchOrders;

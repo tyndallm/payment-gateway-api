@@ -2,6 +2,7 @@ const compress = require('koa-compress');
 const consoleLogger = require('koa-logger');
 const cors = require('koa-cors');
 const helmet = require('koa-helmet');
+const bodyParser = require('koa-bodyparser');
 const Koa = require('koa');
 const signale = require('signale');
 
@@ -23,6 +24,7 @@ const start = port => {
     app.use(helmet());
     app.use(cors());
     app.use(consoleLogger());
+    app.use(bodyParser());
     app.use(compress());
     app.use(routes());
     app.use(invalidUrl());
