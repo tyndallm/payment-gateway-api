@@ -19,6 +19,7 @@ const schema = Schema({
     orderUpdated: { type: Boolean, index: true, default: false },
     complete: { type: Boolean, index: true, default: false },
     transactionHash: { type: String, index: true },
+    transaction: { type: Schema.Types.Mixed },
 });
 
 schema.index({ orderId: 1, transactionHash: 1 }, { unique: true });
